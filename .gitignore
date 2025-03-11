@@ -1,10 +1,18 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
 # Godot cache and temporary files
 .import/
 *.import
 *.log
 *.tmp
-*.godot
+
+# Ignore Godot’s internal cache directory but NOT project.godot
+.godot/
+
+# Android build files
+android/
+
+# Export presets (optional, unless you want to share them)
+export_presets.cfg  
+
+# OS-specific files
+.DS_Store
+Thumbs.db
