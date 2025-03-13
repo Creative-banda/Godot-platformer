@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyavkyjpek2p2"]
+[gd_scene load_steps=11 format=3 uid="uid://cyavkyjpek2p2"]
 
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_6b8f8"]
 [ext_resource type="Texture2D" uid="uid://dcf1mlsp8scc7" path="res://Terrain/Green.png" id="1_7mj4p"]
 [ext_resource type="Texture2D" uid="uid://bdmfhlw3s7rdl" path="res://Terrain/Terrain (16x16).png" id="1_63fwu"]
 [ext_resource type="PackedScene" uid="uid://h6jt8f5b58v6" path="res://scenes/player.tscn" id="2_tcyon"]
 [ext_resource type="PackedScene" uid="uid://ccna1flpt2knp" path="res://scenes/collectable.tscn" id="4_c0jl0"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="5_dyrqi"]
 [ext_resource type="PackedScene" uid="uid://rdsu2njg202v" path="res://scenes/end.tscn" id="6_5nudn"]
+[ext_resource type="PackedScene" uid="uid://d0kjeyia61vdw" path="res://saw.tscn" id="7_je4he"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmi68"]
 texture = ExtResource("1_63fwu")
@@ -181,6 +183,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mmi68")
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_6b8f8")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
@@ -270,3 +273,28 @@ theme_override_font_sizes/font_size = 30
 text = "Point : 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Saw" parent="Items" instance=ExtResource("7_je4he")]
+position = Vector2(460, 544)
+scale = Vector2(0.578947, 0.578947)
+
+[node name="Saw2" parent="Items" instance=ExtResource("7_je4he")]
+position = Vector2(763, 457)
+scale = Vector2(0.578947, 0.578947)
+
+[node name="Saw3" parent="Items" instance=ExtResource("7_je4he")]
+position = Vector2(864, 315)
+scale = Vector2(0.578947, 0.578947)
+frame_progress = 0.113431
+
+[node name="Saw4" parent="Items" instance=ExtResource("7_je4he")]
+position = Vector2(864, 315)
+scale = Vector2(0.578947, 0.578947)
+frame_progress = 0.113431
+
+[node name="Saw5" parent="Items" instance=ExtResource("7_je4he")]
+position = Vector2(52, 230)
+scale = Vector2(0.578947, 0.578947)
+frame_progress = 0.113431

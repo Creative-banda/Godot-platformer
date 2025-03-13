@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://mfq37pg3f2y0"]
+
+[ext_resource type="Texture2D" uid="uid://q2uwehbr4ggl" path="res://Enemy/Fire/On (16x32).png" id="1_cwkxq"]
+[ext_resource type="Texture2D" uid="uid://cay02d4xt5cll" path="res://Enemy/Fire/Hit (16x32).png" id="2_aiyw5"]
+[ext_resource type="Script" path="res://fire.gd" id="3_5u1pw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34iit"]
+atlas = ExtResource("1_cwkxq")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyf4w"]
+atlas = ExtResource("1_cwkxq")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq0l2"]
+atlas = ExtResource("1_cwkxq")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wasp"]
+atlas = ExtResource("2_aiyw5")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urade"]
+atlas = ExtResource("2_aiyw5")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cs5c"]
+atlas = ExtResource("2_aiyw5")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ycsb"]
+atlas = ExtResource("2_aiyw5")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nf0nk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34iit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyf4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq0l2")
+}],
+"loop": true,
+"name": &"burning",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wasp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urade")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cs5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ycsb")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rjg6b"]
+radius = 7.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nf0nk")
+animation = &"burning"
+autoplay = "burning"
+frame_progress = 0.571306
+script = ExtResource("3_5u1pw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_rjg6b")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

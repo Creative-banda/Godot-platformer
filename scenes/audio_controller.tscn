@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbbtckxpkgc7b"]
+
+[ext_resource type="Script" path="res://scenes/audio_controller.gd" id="1_325sv"]
+[ext_resource type="AudioStream" uid="uid://cdjmi04mps3is" path="res://audio/jump.mp3" id="1_yli2e"]
+[ext_resource type="AudioStream" uid="uid://dpupwot83smbj" path="res://audio/hurt.mp3" id="2_vrfal"]
+[ext_resource type="AudioStream" uid="uid://1cqqh2mtioit" path="res://audio/level_1.mp3" id="3_i3srq"]
+[ext_resource type="AudioStream" uid="uid://b77mvw52m8q0i" path="res://audio/level_complete.mp3" id="3_nqo21"]
+[ext_resource type="AudioStream" uid="uid://b3cogb0rce2iw" path="res://audio/collect_item.mp3" id="5_02jwc"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_325sv")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_yli2e")
+
+[node name="level_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i3srq")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vrfal")
+volume_db = 8.0
+pitch_scale = 2.0
+
+[node name="collect_item" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_02jwc")
+volume_db = 8.0
+pitch_scale = 2.0
+
+[node name="Level_complete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nqo21")
