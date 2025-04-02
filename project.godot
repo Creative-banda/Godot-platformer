@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 AudioController="*res://scenes/audio_controller.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 left={
@@ -43,3 +48,4 @@ up={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
