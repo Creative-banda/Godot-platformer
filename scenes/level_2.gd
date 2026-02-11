@@ -5,12 +5,14 @@ extends Node2D
 
 func _ready() -> void:
 	var fires = $Fires
+	AudioController.play_level1()
 	for fire in fires.get_children():
 		if fire.has_signal("body_entered_fire"):
 			fire.body_entered_fire.connect(_on_fire_body_entered_fire)
 
 func _on_fire_body_entered_fire() -> void:
 	AudioController.play_hurt()
+	GameManager.take_damage()
 	character_body_2d.velocity.y = -260
 	
 	character_body_2d.get_node("AnimatedSprite2D").play("hurt")

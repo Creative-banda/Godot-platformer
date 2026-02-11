@@ -73,7 +73,7 @@ radius = 19.0
 [node name="Saw" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_s3f73")
 autoplay = "default"
-frame_progress = 0.0364453
+frame_progress = 0.369013
 script = ExtResource("2_x3bly")
 
 [node name="Area2D" type="Area2D" parent="."]

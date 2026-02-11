@@ -302,16 +302,9 @@ script = ExtResource("1_23ux8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_67d3o")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.516566
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3.75)
 shape = SubResource("RectangleShape2D_ttabe")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -71)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true

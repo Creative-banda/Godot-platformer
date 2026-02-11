@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx2iib31om5sy"]
+
+[ext_resource type="Texture2D" uid="uid://ten01uktpgkn" path="res://buttons/flatDark23.png" id="1_j3w2c"]
+[ext_resource type="Texture2D" uid="uid://csskgcce5uk5e" path="res://buttons/flatDark24.png" id="2_cgjl0"]
+[ext_resource type="Texture2D" uid="uid://cplv4troh3vy8" path="res://buttons/flatDark25.png" id="3_nin5p"]
+[ext_resource type="Texture2D" uid="uid://v55akbbanbim" path="res://buttons/flatLight24.png" id="4_g324f"]
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="Left" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.768
+anchor_right = 0.341
+anchor_bottom = 1.0
+offset_top = 150.336
+offset_right = -392.832
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="Left"]
+texture_filter = 1
+position = Vector2(85, -211)
+scale = Vector2(1.51, 1.51)
+texture_normal = ExtResource("1_j3w2c")
+texture_pressed = ExtResource("1_j3w2c")
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="Left"]
+texture_filter = 1
+position = Vector2(304, -211)
+scale = Vector2(1.51, 1.51)
+texture_normal = ExtResource("2_cgjl0")
+texture_pressed = ExtResource("2_cgjl0")
+action = "right"
+
+[node name="Right" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Jump" type="TouchScreenButton" parent="Right"]
+texture_filter = 1
+position = Vector2(-221, -278)
+scale = Vector2(1.51, 1.51)
+texture_normal = ExtResource("3_nin5p")
+texture_pressed = ExtResource("4_g324f")
+action = "up"

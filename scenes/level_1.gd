@@ -13,6 +13,8 @@ func _ready() -> void:
 
 func _on_saw_body_touch_saw(saw_position: Vector2) -> void:
 	AudioController.play_hurt()
+	character_body_2d.get_node("AnimatedSprite2D").play("hurt")
+	GameManager.take_damage()
 	var player_position = character_body_2d.global_position
 
 	# Check the vertical position
@@ -23,4 +25,3 @@ func _on_saw_body_touch_saw(saw_position: Vector2) -> void:
 		# Player is below the saw
 		character_body_2d.velocity.y = 260
 	
-	character_body_2d.get_node("AnimatedSprite2D").play("hurt")
